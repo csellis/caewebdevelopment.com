@@ -1,11 +1,10 @@
-import Link from "next/link";
-
+import Link from 'next/link'
 
 function Footer() {
   return (
     <footer className="bg-white">
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden space-y-8 sm:px-6 lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
+        {/* <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
             <Link href="/about">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
@@ -23,7 +22,7 @@ function Footer() {
               Partners
         </a>
           </div>
-        </nav>
+        </nav> */}
         {/*         
         <div className="mt-8 flex justify-center space-x-6">
           <a href="#" className="text-gray-400 hover:text-gray-500">
@@ -59,12 +58,11 @@ function Footer() {
         </div>
          */}
         <p className="mt-8 text-center text-base leading-6 text-gray-400">
-          &copy; {new Date().getFullYear()} Meet on V. All rights reserved.
-    </p>
+          &copy; {new Date().getFullYear()} CAE Webdevelopment Limited. All rights reserved.
+        </p>
       </div>
     </footer>
-
-  );
+  )
 }
 
-export default Footer;
+export default Footer

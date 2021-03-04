@@ -1,28 +1,29 @@
-import Link from "next/link";
+import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import ButtonLink from './ButtonLink';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ButtonLink from './ButtonLink'
 
 function Header() {
-
-  const router = useRouter();
+  const router = useRouter()
 
   // console.log({ route: router.pathname })
-  const isHome = router.pathname === "/"
+  const isHome = router.pathname === '/'
 
   const HeaderLink = ({ className, href, children }) => {
     if (isHome) {
-      return <AnchorLink className={className} href={href}>{children}</AnchorLink>
+      return (
+        <AnchorLink className={className} href={href}>
+          {children}
+        </AnchorLink>
+      )
     } else {
       return (
         <Link href={'/' + href}>
-          <a className={className}>
-            {children}
-          </a>
-        </Link >
+          <a className={className}>{children}</a>
+        </Link>
       )
     }
   }
@@ -35,7 +36,8 @@ function Header() {
             <div className="w-32 mr-3">
               {/* <LogoIcon /> */}
               {/* <Image src="/logo.png" alt="Meet on V" width={113.5} height={64} /> */}
-              <img src="/logo.png" alt="Meet on V" />
+              {/* <img src="/logo.png" alt="Meet on V" /> */}
+              CAE Webdevelopment Ltd
             </div>
           </a>
         </Link>
@@ -45,17 +47,19 @@ function Header() {
           </HeaderLink>
           <HeaderLink className="px-4" href="#services">
             Services
-        </HeaderLink>
-          <HeaderLink className="px-4" href="#testimonials">
+          </HeaderLink>
+          {/* <HeaderLink className="px-4" href="#testimonials">
             Testimonials
-        </HeaderLink>
+          </HeaderLink> */}
         </div>
         <div className="hidden md:block">
-          <ButtonLink className="text-sm" href="/contact">Get Started</ButtonLink>
+          <ButtonLink className="text-sm" href="/contact">
+            Get Started
+          </ButtonLink>
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
