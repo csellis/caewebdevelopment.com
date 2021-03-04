@@ -5,8 +5,6 @@ const BuildImage = () => (
     id="a27520da-4319-485c-96d7-e776d7397e13"
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
-    width="876.27165"
-    height="661.47277"
     viewBox="0 0 876.27165 661.47277"
   >
     <path
