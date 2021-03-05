@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import NewLogo from '../svg/NewLogo'
 
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ButtonLink from './ButtonLink'
@@ -34,10 +35,10 @@ function Header() {
         <Link href="/">
           <a className="flex items-center text-2xl">
             <div className="w-32 mr-3">
-              {/* <LogoIcon /> */}
+              <Image src="/CAE Web.svg" alt="CAE Webdevelopment Ltd" height="500" width="500" />
               {/* <Image src="/logo.png" alt="Meet on V" width={113.5} height={64} /> */}
               {/* <img src="/logo.png" alt="Meet on V" /> */}
-              CAE Webdevelopment Ltd
+              {/* CAE Webdevelopment Ltd */}
             </div>
           </a>
         </Link>
