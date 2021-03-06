@@ -1,4 +1,22 @@
+import React, { useState, useRef } from 'react'
+
 export default function ContactForm() {
+  const form = useRef(null)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const data = new FormData(form.current)
+    let contactInfo = {}
+    for (var piece of data.entries()) {
+      contactInfo[piece[0]] = piece[1]
+    }
+    const sent = fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(contactInfo),
+    })
+  }
+
   return (
     <div className="relative bg-white">
       <div className="lg:absolute lg:inset-0">
@@ -31,15 +49,14 @@ export default function ContactForm() {
             </p>
 
             <form
+              ref={form}
               name="contact"
               method="POST"
-              // data-netlify="true"
-              // netlify-honeypot="bot-field"
-              action="https://submit-form.com/2wumgAO7"
+              onSubmit={handleSubmit}
               className="pt-16 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             >
               <input type="hidden" name="_redirect" value="https://caewebdevelopment.com/success" />
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="formName" value="contact" />
               <p className="hidden">
                 <label>
                   Don’t fill this out if you're human:
@@ -48,31 +65,13 @@ export default function ContactForm() {
               </p>
 
               <div>
-                <label
-                  htmlFor="first_name"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  First name
+                <label htmlFor="name" className="block text-sm font-medium leading-5 text-gray-700">
+                  Name
                 </label>
                 <div className="mt-1 relative rounded-md shadow-sm">
                   <input
-                    name="first_name"
-                    id="first_name"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="last_name"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  Last name
-                </label>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="last_name"
-                    id="last_name"
+                    name="name"
+                    id="name"
                     className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                   />
                 </div>
