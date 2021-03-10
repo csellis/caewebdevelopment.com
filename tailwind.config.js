@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./components/**/*.js", "./pages/**/*.js"],
+  purge: ['./components/**/*.js', './pages/**/*.js'],
   darkMode: false,
   theme: {
     extend: {
@@ -7,13 +7,11 @@ module.exports = {
         primary: {
           lighter: 'hsl(207, 73%, 52%)',
           DEFAULT: 'hsl(207, 73%, 57%)',
-          darker: 'hsl(207, 73%, 44%)'
-        }
-      }
-    }
+          darker: 'hsl(207, 73%, 44%)',
+        },
+      },
+    },
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/ui'),
-  ],
-};
+  plugins: [require('@tailwindcss/ui'), require('@tailwindcss/forms')],
+}

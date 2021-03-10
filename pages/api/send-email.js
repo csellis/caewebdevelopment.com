@@ -11,13 +11,11 @@ export default async (req, res) => {
       })
     }
 
-    // console.log(req.body)
     const sent = await sendEmail(req.body)
-    console.log(sent)
     if (sent && sent.Message === 'OK') {
       return res.status(200).end()
     } else {
-      res.status(404).json({
+      return res.status(404).json({
         error: {
           code: sent.ErrorCode,
           message: sent.Message,

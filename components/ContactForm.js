@@ -1,21 +1,32 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
+import { useRouter } from 'next/router'
 
 export default function ContactForm() {
+  const router = useRouter()
   const form = useRef(null)
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const data = new FormData(form.current)
     let contactInfo = {}
     for (var piece of data.entries()) {
       contactInfo[piece[0]] = piece[1]
     }
-    const sent = fetch('/api/send-email', {
+    const sent = await fetch('/api/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(contactInfo),
     })
+
+    console.log(sent)
+    if (sent.status === 200) {
+      router.push('/success')
+    } else {
+      router.push('/uhoh')
+    }
   }
+
+  const budget = ['Less than $2K', '$2K - $5K', '$5K - $10K', '$10k+']
 
   return (
     <div className="relative bg-white">
@@ -64,16 +75,12 @@ export default function ContactForm() {
                 </label>
               </p>
 
-              <div>
+              <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-medium leading-5 text-gray-700">
                   Name
                 </label>
                 <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="name"
-                    id="name"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  />
+                  <input name="name" type="text" id="name" className="" />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -84,12 +91,7 @@ export default function ContactForm() {
                   Email
                 </label>
                 <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="email"
-                    id="email"
-                    type="email"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  />
+                  <input name="email" id="email" type="email" className="" />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -100,11 +102,7 @@ export default function ContactForm() {
                   Company
                 </label>
                 <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="company"
-                    id="company"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  />
+                  <input name="company" type="text" id="company" className="" />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -118,11 +116,7 @@ export default function ContactForm() {
                   <span className="text-sm leading-5 text-gray-500">Optional</span>
                 </div>
                 <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="phone"
-                    id="phone"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  />
+                  <input name="phone" type="tel" id="phone" className="" />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -140,7 +134,7 @@ export default function ContactForm() {
                     name="how_can_we_help"
                     id="how_can_we_help"
                     rows="4"
-                    className="form-textarea block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                    className=""
                   ></textarea>
                 </div>
               </div>
@@ -149,54 +143,26 @@ export default function ContactForm() {
                   Expected budget
                 </legend>
                 <div className="mt-4 grid grid-cols-1 gap-y-4">
-                  <div className="flex items-center">
-                    <input
-                      id="budget_under_25k"
-                      name="budget"
-                      value="under_25k"
-                      type="radio"
-                      className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                    />
-                    <label htmlFor="budget_under_25k" className="ml-3">
-                      <span className="block text-sm leading-5 text-gray-700">Less than $25K</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      id="budget_25k-50k"
-                      name="budget"
-                      value="25k-50k"
-                      type="radio"
-                      className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                    />
-                    <label htmlFor="budget_25k-50k" className="ml-3">
-                      <span className="block text-sm leading-5 text-gray-700">$25K – $50K</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      id="budget_50k-100k"
-                      name="budget"
-                      value="50k-100k"
-                      type="radio"
-                      className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                    />
-                    <label htmlFor="budget_50k-100k" className="ml-3">
-                      <span className="block text-sm leading-5 text-gray-700">$50K – $100K</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      id="budget_over_100k"
-                      name="budget"
-                      value="over_100k"
-                      type="radio"
-                      className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                    />
-                    <label htmlFor="budget_over_100k" className="ml-3">
-                      <span className="block text-sm leading-5 text-gray-700">$100K+</span>
-                    </label>
-                  </div>
+                  {budget.map((budgetItem) => {
+                    const id = budgetItem.split(' ').join('_')
+
+                    return (
+                      <div className="flex items-center" key={id}>
+                        <input
+                          id={id}
+                          name="budget"
+                          value={id}
+                          type="radio"
+                          className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <label htmlFor={id} className="ml-3">
+                          <span className="block text-sm leading-5 text-gray-700">
+                            {budgetItem}
+                          </span>
+                        </label>
+                      </div>
+                    )
+                  })}
                 </div>
               </fieldset>
               <div className="sm:col-span-2">
@@ -210,7 +176,8 @@ export default function ContactForm() {
                   <input
                     name="how_did_you_hear_about_us"
                     id="how_did_you_hear_about_us"
-                    className="form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                    type="text"
+                    className=""
                   />
                 </div>
               </div>
