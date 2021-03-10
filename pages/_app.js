@@ -1,16 +1,14 @@
-import "../css/index.css";
-import SEO from '../lib/next-seo.config';
-import { DefaultSeo} from "next-seo"
-
+import '../css/index.css'
+import SEO from '../lib/next-seo.config'
+import { DefaultSeo } from 'next-seo'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <DefaultSeo {...SEO}/>
-    <Component {...pageProps} />
+      <DefaultSeo {...SEO} />
+      <Component {...pageProps} />
     </>
   )
-  
 }
 
-export default MyApp;
+export default MyApp
