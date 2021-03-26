@@ -26,6 +26,7 @@
   "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
   "dependencies": {
     "@statickit/react": "^2.1.1",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/ui": "^0.7.2",
     "autoprefixer": "^10.0.2",
@@ -41,6 +42,6 @@
     "postcss": "^8.1.10",
     "prettier": "2.1.2",
     "rustywind": "0.6.7",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.4"
   }
 }

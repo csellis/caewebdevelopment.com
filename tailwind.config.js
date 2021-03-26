@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   darkMode: false,
@@ -9,9 +11,14 @@ module.exports = {
           DEFAULT: 'hsl(207, 73%, 57%)',
           darker: 'hsl(207, 73%, 44%)',
         },
+        cyan: colors.cyan,
       },
     },
   },
   variants: {},
-  plugins: [require('@tailwindcss/ui'), require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/ui'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
