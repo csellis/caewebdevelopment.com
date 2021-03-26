@@ -1,6 +1,7 @@
 import '../css/index.css'
 import SEO from '../lib/next-seo.config'
 import { DefaultSeo } from 'next-seo'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
