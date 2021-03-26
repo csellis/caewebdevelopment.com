@@ -50,7 +50,7 @@ export default function ContactForm() {
             </p>
             <div className="border-t-2 my-4 border-gray-100"></div>
             <p className="pt-12 text-center text-lg leading-7 text-gray-800 sm:mt-3 underline">
-              <a target="_blank" href="https://calendly.com/cs-ellis/10-minutes-project-call">
+              <a target="_blank" href="https://calendly.com/cs-ellis/30min">
                 Let's just talk
               </a>
             </p>
@@ -74,6 +74,52 @@ export default function ContactForm() {
                   <input type="checkbox" name="_honeypot" tabIndex="-1" autoComplete="off" />
                 </label>
               </p>
+              <div className="sm:col-span-2">
+                <div className="flex justify-between">
+                  <label
+                    htmlFor="how_can_we_help"
+                    className="block text-sm font-medium leading-5 text-gray-700"
+                  >
+                    How can we help you?
+                  </label>
+                </div>
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <textarea
+                    name="how_can_we_help"
+                    id="how_can_we_help"
+                    rows="4"
+                    className=""
+                  ></textarea>
+                </div>
+              </div>
+
+              <fieldset className="sm:col-span-2">
+                <legend className="block text-sm font-medium leading-5 text-gray-700">
+                  Expected budget
+                </legend>
+                <div className="mt-4 grid grid-cols-1 gap-y-4">
+                  {budget.map((budgetItem) => {
+                    const id = budgetItem.split(' ').join('_')
+
+                    return (
+                      <div className="flex items-center" key={id}>
+                        <input
+                          id={id}
+                          name="budget"
+                          value={id}
+                          type="radio"
+                          className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <label htmlFor={id} className="ml-3">
+                          <span className="block text-sm leading-5 text-gray-700">
+                            {budgetItem}
+                          </span>
+                        </label>
+                      </div>
+                    )
+                  })}
+                </div>
+              </fieldset>
 
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-medium leading-5 text-gray-700">
@@ -119,52 +165,7 @@ export default function ContactForm() {
                   <input name="phone" type="tel" id="phone" className="" />
                 </div>
               </div>
-              <div className="sm:col-span-2">
-                <div className="flex justify-between">
-                  <label
-                    htmlFor="how_can_we_help"
-                    className="block text-sm font-medium leading-5 text-gray-700"
-                  >
-                    How can we help you?
-                  </label>
-                  <span className="text-sm leading-5 text-gray-500">Max. 500 characters</span>
-                </div>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <textarea
-                    name="how_can_we_help"
-                    id="how_can_we_help"
-                    rows="4"
-                    className=""
-                  ></textarea>
-                </div>
-              </div>
-              <fieldset className="sm:col-span-2">
-                <legend className="block text-sm font-medium leading-5 text-gray-700">
-                  Expected budget
-                </legend>
-                <div className="mt-4 grid grid-cols-1 gap-y-4">
-                  {budget.map((budgetItem) => {
-                    const id = budgetItem.split(' ').join('_')
 
-                    return (
-                      <div className="flex items-center" key={id}>
-                        <input
-                          id={id}
-                          name="budget"
-                          value={id}
-                          type="radio"
-                          className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                        />
-                        <label htmlFor={id} className="ml-3">
-                          <span className="block text-sm leading-5 text-gray-700">
-                            {budgetItem}
-                          </span>
-                        </label>
-                      </div>
-                    )
-                  })}
-                </div>
-              </fieldset>
               <div className="sm:col-span-2">
                 <label
                   htmlFor="how_did_you_hear_about_us"

@@ -255,17 +255,15 @@ function Products() {
                   })}
                 </ul>
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://calendly.com/cs-ellis/30min"
                   className="w-full bg-white border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-lg leading-6 font-medium text-cyan-700 hover:bg-cyan-50 md:px-10"
                 >
                   Get started today
                 </a>
-                <a
-                  href="#"
-                  className="block text-center text-base font-medium text-cyan-100 hover:text-white"
-                >
+                <div className="block text-center text-base font-medium text-cyan-100 hover:text-white">
                   Build your project quickly
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -338,7 +336,8 @@ function Products() {
               realistic vision for your site and build it right the first time.
             </p>
             <a
-              href="#"
+              target="_blank"
+              href="https://calendly.com/cs-ellis/30min"
               className="mt-8 w-full bg-cyan-50 border border-transparent rounded-md py-3 px-5 inline-flex items-center justify-center text-base font-medium text-cyan-700 hover:bg-cyan-100 sm:w-auto"
             >
               Get started!
