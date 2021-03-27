@@ -277,16 +277,12 @@ function Products() {
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <h2 className="max-w-md mx-auto text-3xl font-extrabold text-cyan-900 text-center lg:max-w-xl lg:text-left">
-                The world's most innovative companies use Workflow
+                We've worked with the world's most innovative companies
               </h2>
               <div className="mt-8 flow-root lg:mt-0 self-center">
                 <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/workcation-logo-cyan-900.svg"
-                      alt="Workcation"
-                    />
+                    <img className="h-12" src="/PayPal-cyan-900.svg" alt="PayPal" />
                   </div>
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
                     <img
@@ -311,14 +307,14 @@ function Products() {
         {/* <!-- FAQs --> */}
         <div className="relative bg-cyan-50 mx-auto ">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center">
+            <h2 className="text-3xl font-extrabold text-cyan-900 text-center">
               Frequently asked questions
             </h2>
             <div className="mt-12">
               <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-3">
                 {faqs.map((faq, index) => (
                   <div key={index}>
-                    <dt className="text-lg leading-6 font-medium text-gray-900">{faq.q}</dt>
+                    <dt className="text-lg leading-6 font-medium text-cyan-900">{faq.q}</dt>
                     <dd className="mt-2 text-base text-gray-500">{faq.a}</dd>
                   </div>
                 ))}

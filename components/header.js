@@ -51,9 +51,9 @@ function Header() {
             <HeaderLink className="px-4" href="#services">
               Services
             </HeaderLink>
-            <Link href="/products">
+            {/* <Link href="/products">
               <a className="px-4">3-2-1 Launch</a>
-            </Link>
+            </Link> */}
           </div>
           <div className="hidden md:block">
             <ButtonLink className="text-sm" href="/contact">
