@@ -230,9 +230,12 @@ function Products() {
                     'User Strategy',
                     'UX Prototyping',
                     'Collaborative Design',
-                  ].map((feature) => {
+                  ].map((feature, index) => {
                     return (
-                      <li className="bg-cyan-700 bg-opacity-50 py-4 px-4 flex items-center text-base text-white">
+                      <li
+                        className="bg-cyan-700 bg-opacity-50 py-4 px-4 flex items-center text-base text-white"
+                        key={index}
+                      >
                         {/* <!-- Heroicon name: outline/check --> */}
                         <svg
                           className="h-6 w-6 text-cyan-200"
@@ -313,8 +316,8 @@ function Products() {
             </h2>
             <div className="mt-12">
               <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-3">
-                {faqs.map((faq) => (
-                  <div>
+                {faqs.map((faq, index) => (
+                  <div key={index}>
                     <dt className="text-lg leading-6 font-medium text-gray-900">{faq.q}</dt>
                     <dd className="mt-2 text-base text-gray-500">{faq.a}</dd>
                   </div>

@@ -7,6 +7,7 @@ import HeroImage from '../svg/HeroImage'
 import SvgCharts from '../svg/SvgCharts'
 import Build from '../svg/Build'
 import { NextSeo } from 'next-seo'
+import Container from '../components/Container'
 
 function IndexPage() {
   return (
@@ -18,7 +19,7 @@ function IndexPage() {
           <div className="text-center lg:text-left lg:w-1/2">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
               Building Custom
-              <br /> Business Tools for the UK
+              <br /> Business Tools
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
               You can have business tools built,
@@ -97,6 +98,7 @@ function IndexPage() {
         }
         secondarySlot={<Build />}
       />
+
       {/* <SplitSection
         primarySlot={
           <div className="lg:pr-32 xl:pr-48">
