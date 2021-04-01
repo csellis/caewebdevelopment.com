@@ -7,6 +7,7 @@ import HeroImage from '../svg/HeroImage'
 import SvgCharts from '../svg/SvgCharts'
 import Build from '../svg/Build'
 import { NextSeo } from 'next-seo'
+import Link from 'next/link'
 
 function Products() {
   const faqs = [
@@ -257,13 +258,11 @@ function Products() {
                     )
                   })}
                 </ul>
-                <a
-                  target="_blank"
-                  href="https://calendly.com/cs-ellis/30min"
-                  className="w-full bg-white border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-lg leading-6 font-medium text-cyan-700 hover:bg-cyan-50 md:px-10"
-                >
-                  Get started today
-                </a>
+                <Link href="/contact">
+                  <a className="w-full bg-white border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-lg leading-6 font-medium text-cyan-700 hover:bg-cyan-50 md:px-10">
+                    Get started today
+                  </a>
+                </Link>
                 <div className="block text-center text-base font-medium text-cyan-100 hover:text-white">
                   Build your project quickly
                 </div>
@@ -282,14 +281,10 @@ function Products() {
               <div className="mt-8 flow-root lg:mt-0 self-center">
                 <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img className="h-12" src="/PayPal-cyan-900.svg" alt="PayPal" />
+                    <img className="h-12" src="/Paypal.svg" alt="PayPal" />
                   </div>
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/tuple-logo-cyan-900.svg"
-                      alt="Tuple"
-                    />
+                    <img className="h-12" src="/Greycroft.svg" alt="Greycroft" />
                   </div>
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
                     <img
@@ -334,13 +329,11 @@ function Products() {
               After a prospective client interview, we will work with you to develop a clear,
               realistic vision for your site and build it right the first time.
             </p>
-            <a
-              target="_blank"
-              href="https://calendly.com/cs-ellis/30min"
-              className="mt-8 w-full bg-cyan-50 border border-transparent rounded-md py-3 px-5 inline-flex items-center justify-center text-base font-medium text-cyan-700 hover:bg-cyan-100 sm:w-auto"
-            >
-              Get started!
-            </a>
+            <Link href="/contact">
+              <a className="mt-8 w-full bg-cyan-50 border border-transparent rounded-md py-3 px-5 inline-flex items-center justify-center text-base font-medium text-cyan-700 hover:bg-cyan-100 sm:w-auto">
+                Get started!
+              </a>
+            </Link>
           </div>
         </div>
       </div>
