@@ -312,7 +312,7 @@ function Products() {
         <div className="bg-gradient-to-r from-cyan-600 to-green-400">
           <div className="max-w-2xl mx-auto py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              <span className="block">Let's have a call.</span>
+              <span className="block">Let's get started.</span>
               <span className="block text-cyan-900">Start building your solution today.</span>
             </h2>
             <p className="mt-4 text-lg leading-6 text-cyan-100">

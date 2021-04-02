@@ -12,7 +12,7 @@ import Container from '../components/Container'
 function IndexPage() {
   return (
     <Layout>
-      <NextSeo title="CAE Web" description="Building interactive business tools for the UK" />
+      <NextSeo title="CAE Web" description="Building business tool integrations quickly." />
       {/* Hero */}
       <section className="pt-20 md:pt-40">
         <div className="container mx-auto px-8 lg:flex">
