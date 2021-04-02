@@ -279,20 +279,10 @@ function Products() {
                 We've worked with the world's most innovative companies
               </h2>
               <div className="mt-8 flow-root lg:mt-0 self-center">
-                <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
-                  <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img className="h-12" src="/Paypal.svg" alt="PayPal" />
-                  </div>
-                  <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img className="h-12" src="/Greycroft.svg" alt="Greycroft" />
-                  </div>
-                  <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/level-logo-cyan-900.svg"
-                      alt="Level"
-                    />
-                  </div>
+                <div className="-mt-4 -ml-8 lg:-ml-4 grid grid-cols-3 gap-6">
+                  <img className="h-12" src="/PayPal.png" alt="PayPal" />
+                  <img className="h-12" src="/Greycroft.png" alt="Greycroft" />
+                  <img className="h-12" src="/CBCTech.png" alt="CBC Technical" />
                 </div>
               </div>
             </div>
