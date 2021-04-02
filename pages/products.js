@@ -37,8 +37,8 @@ function Products() {
   return (
     <Layout>
       <NextSeo
-        title="CAE Web | Products"
-        description="Building interactive business tools for the UK"
+        title="3-2-1 Launch | CAE Web"
+        description="3-2-1 Launch: Build your next project quickly to get feedback for your business."
       />
 
       <div className="relative bg-white">
@@ -280,9 +280,9 @@ function Products() {
               </h2>
               <div className="mt-8 flow-root lg:mt-0 self-center">
                 <div className="-mt-4 -ml-8 lg:-ml-4 grid grid-cols-3 gap-6">
-                  <img className="h-12" src="/PayPal.png" alt="PayPal" />
-                  <img className="h-12" src="/Greycroft.png" alt="Greycroft" />
-                  <img className="h-12" src="/CBCTech.png" alt="CBC Technical" />
+                  <img className="max-h-12" src="/PayPal.png" alt="PayPal" />
+                  <img className="max-h-12" src="/Greycroft.png" alt="Greycroft" />
+                  <img className="max-h-12" src="/CBCTech.png" alt="CBC Technical" />
                 </div>
               </div>
             </div>
