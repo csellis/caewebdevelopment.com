@@ -1,201 +1,203 @@
-import React, { useRef } from 'react'
-import { useRouter } from 'next/router'
+import Image from 'next/image'
+import React, { useRef, useEffect } from 'react'
+import { InlineWidget } from 'react-calendly'
 
 export default function ContactForm() {
-  const router = useRouter()
-  const form = useRef(null)
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    const data = new FormData(form.current)
-    let contactInfo = {}
-    for (var piece of data.entries()) {
-      contactInfo[piece[0]] = piece[1]
-    }
-    const sent = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(contactInfo),
-    })
-
-    console.log(sent)
-    if (sent.status === 200) {
-      router.push('/success')
-    } else {
-      router.push('/uhoh')
-    }
-  }
-
   const budget = ['Less than $2K', '$2K - $5K', '$5K - $10K', '$10k+']
 
+  useEffect(() => {
+    const head = document.querySelector('head')
+    const script = document.createElement('script')
+    script.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js')
+    head.appendChild(script)
+  }, [])
+
   return (
-    <div className="relative bg-white">
-      <div className="lg:absolute lg:inset-0">
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover lg:absolute lg:h-full"
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-      <div className="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
-        <div className="lg:pr-8">
-          <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-            <h2 className="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
-              Let's work together
-            </h2>
-            <p className="mt-4 text-lg leading-7 text-gray-500 sm:mt-3">
-              We’d love to hear from you!
-            </p>
-            <div className="border-t-2 my-4 border-gray-100"></div>
-            <p className="pt-12 text-center text-lg leading-7 text-gray-800 sm:mt-3 underline">
-              <a target="_blank" href="https://calendly.com/cs-ellis/30min">
-                Let's just talk
-              </a>
-            </p>
-
-            <p className="pt-12 text-xl font-bold text-center leading-7 text-gray-800 sm:mt-3">
-              - OR -
-            </p>
-
-            <form
-              ref={form}
-              name="contact"
-              method="POST"
-              onSubmit={handleSubmit}
-              className="pt-16 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
-            >
-              <input type="hidden" name="_redirect" value="https://caewebdevelopment.com/success" />
-              <input type="hidden" name="formName" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don’t fill this out if you're human:
-                  <input type="checkbox" name="_honeypot" tabIndex="-1" autoComplete="off" />
-                </label>
+    <div className="relative bg-warm-gray-50">
+      <main className="overflow-hidden">
+        <div className="bg-warm-gray-50">
+          <div className="py-24 lg:py-32">
+            <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
+              <h1 className="text-4xl font-extrabold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl">
+                Start building your next project today.
+              </h1>
+              <p className="mt-6 text-xl text-warm-gray-500 max-w-3xl">
+                With 3-2-1 Launch, we'll help you build an initial release of your software in three
+                days, and schedule two additional weeks of refinement and bug fixing. <br />{' '}
+                Important conditions apply.
               </p>
-              <div className="sm:col-span-2">
-                <div className="flex justify-between">
-                  <label
-                    htmlFor="how_can_we_help"
-                    className="block text-sm font-medium leading-5 text-gray-700"
+            </div>
+          </div>
+        </div>
+
+        <section className="relative bg-white" aria-labelledby="contactHeading">
+          <div className="absolute w-full h-1/2 bg-warm-gray-50" aria-hidden="true"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <svg
+              className="absolute z-0 top-0 right-0 transform -translate-y-16 translate-x-1/2 sm:translate-x-1/4 md:-translate-y-24 lg:-translate-y-72"
+              width="404"
+              height="384"
+              fill="none"
+              viewBox="0 0 404 384"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern
+                  id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
+                  x="0"
+                  y="0"
+                  width="20"
+                  height="20"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect
+                    x="0"
+                    y="0"
+                    width="4"
+                    height="4"
+                    className="text-warm-gray-200"
+                    fill="currentColor"
+                  />
+                </pattern>
+              </defs>
+              <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+            </svg>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative bg-white shadow-xl">
+              <h2 id="contactHeading" className="sr-only">
+                Contact us
+              </h2>
+
+              <div className="grid grid-cols-1 lg:grid-cols-6">
+                <div className="relative overflow-hidden py-10 bg-gradient-to-b from-teal-500 to-teal-600 lg:col-span-3">
+                  <div
+                    className="absolute inset-0 pointer-events-none sm:hidden"
+                    aria-hidden="true"
                   >
-                    How can we help you?
-                  </label>
-                </div>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <textarea
-                    name="how_can_we_help"
-                    id="how_can_we_help"
-                    rows="4"
-                    className=""
-                  ></textarea>
-                </div>
-              </div>
-
-              <fieldset className="sm:col-span-2">
-                <legend className="block text-sm font-medium leading-5 text-gray-700">
-                  Expected budget
-                </legend>
-                <div className="mt-4 grid grid-cols-1 gap-y-4">
-                  {budget.map((budgetItem) => {
-                    const id = budgetItem.split(' ').join('_')
-
-                    return (
-                      <div className="flex items-center" key={id}>
-                        <input
-                          id={id}
-                          name="budget"
-                          value={id}
-                          type="radio"
-                          className="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                        />
-                        <label htmlFor={id} className="ml-3">
-                          <span className="block text-sm leading-5 text-gray-700">
-                            {budgetItem}
-                          </span>
-                        </label>
-                      </div>
-                    )
-                  })}
-                </div>
-              </fieldset>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="name" className="block text-sm font-medium leading-5 text-gray-700">
-                  Name
-                </label>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input name="name" type="text" id="name" className="" />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  Email
-                </label>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input name="email" id="email" type="email" className="" />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  Company
-                </label>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input name="company" type="text" id="company" className="" />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <div className="flex justify-between">
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium leading-5 text-gray-700"
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      width="343"
+                      height="388"
+                      viewBox="0 0 343 388"
+                      fill="none"
+                      preserveAspectRatio="xMidYMid slice"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z"
+                        fill="url(#linear1)"
+                        fillOpacity=".1"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="linear1"
+                          x1="254.553"
+                          y1="107.554"
+                          x2="961.66"
+                          y2="814.66"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#fff"></stop>
+                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div
+                    className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden"
+                    aria-hidden="true"
                   >
-                    Phone
-                  </label>
-                  <span className="text-sm leading-5 text-gray-500">Optional</span>
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      width="359"
+                      height="339"
+                      viewBox="0 0 359 339"
+                      fill="none"
+                      preserveAspectRatio="xMidYMid slice"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z"
+                        fill="url(#linear2)"
+                        fillOpacity=".1"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="linear2"
+                          x1="192.553"
+                          y1="28.553"
+                          x2="899.66"
+                          y2="735.66"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#fff"></stop>
+                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div
+                    className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      width="160"
+                      height="678"
+                      viewBox="0 0 160 678"
+                      fill="none"
+                      preserveAspectRatio="xMidYMid slice"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z"
+                        fill="url(#linear3)"
+                        fillOpacity=".1"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="linear3"
+                          x1="192.553"
+                          y1="325.553"
+                          x2="899.66"
+                          y2="1032.66"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#fff"></stop>
+                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div
+                    className="relative absolute top-0 right-0 mt-6"
+                    style={{ width: '500px', height: '500px' }}
+                  >
+                    <Image
+                      src="/absurd_light.png"
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Absurdist Light Bulb"
+                    />
+                  </div>
                 </div>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input name="phone" type="tel" id="phone" className="" />
-                </div>
-              </div>
 
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="how_did_you_hear_about_us"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  How did you hear about us?
-                </label>
-                <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    name="how_did_you_hear_about_us"
-                    id="how_did_you_hear_about_us"
-                    type="text"
-                    className=""
+                {/* <!-- Contact form --> */}
+                <div className="py-10 px-6 sm:px-10 lg:col-span-3 xl:p-12">
+                  {/* <h3 className="text-lg font-medium text-warm-gray-900">Send us a message</h3> */}
+                  <InlineWidget
+                    url="https://calendly.com/cs-ellis/15-min-discovery-call"
+                    styles={{
+                      height: '850px',
+                    }}
                   />
                 </div>
               </div>
-              <div className="text-right sm:col-span-2">
-                <span className="inline-flex rounded-md shadow-sm">
-                  <button
-                    type="submit"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary hover:bg-primary-darker focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                  >
-                    Submit
-                  </button>
-                </span>
-              </div>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   )
 }

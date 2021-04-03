@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo'
 function ContactPage() {
   return (
     <Layout>
-      <NextSeo title="CAE Web | Contact" description="Let's work together." />
+      <NextSeo title="Let's work together | CAE Web" description="Let's work together." />
       <div className="">
         <ContactForm />
       </div>

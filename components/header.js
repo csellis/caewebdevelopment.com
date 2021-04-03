@@ -31,16 +31,13 @@ function Header() {
   }
 
   return (
-    <header className="sticky top-0 bg-white shadow">
+    <header className="sticky top-0 bg-white shadow z-50">
       <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
         <div className="max-w-5xl flex mx-auto items-center justify-between sm:flex-row flex-1">
           <Link href="/">
             <a className="flex items-center text-2xl">
               <div className="w-32 mr-3">
-                <Image src="/CAE Web.svg" alt="CAE Webdevelopment Ltd" height="500" width="500" />
-                {/* <Image src="/logo.png" alt="Meet on V" width={113.5} height={64} /> */}
-                {/* <img src="/logo.png" alt="Meet on V" /> */}
-                {/* CAE Webdevelopment Ltd */}
+                <Image src="/CAE Web.svg" alt="CAE Webdevelopment Ltd" height="128" width="128" />
               </div>
             </a>
           </Link>
@@ -51,9 +48,9 @@ function Header() {
             <HeaderLink className="px-4" href="#services">
               Services
             </HeaderLink>
-            {/* <Link href="/products">
+            <Link href="/products">
               <a className="px-4">3-2-1 Launch</a>
-            </Link> */}
+            </Link>
           </div>
           <div className="hidden md:block">
             <ButtonLink className="text-sm" href="/contact">

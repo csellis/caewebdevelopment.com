@@ -8,70 +8,103 @@ import SvgCharts from '../svg/SvgCharts'
 import Build from '../svg/Build'
 import { NextSeo } from 'next-seo'
 import Container from '../components/Container'
+import Image from 'next/image'
+import Link from 'next/link'
 
 function IndexPage() {
   return (
     <Layout>
       <NextSeo title="CAE Web" description="Building business tool integrations quickly." />
       {/* Hero */}
-      <section className="pt-20 md:pt-40">
-        <div className="container mx-auto px-8 lg:flex">
-          <div className="text-center lg:text-left lg:w-1/2">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-              Building Custom
-              <br /> Business Tools
-            </h1>
-            <p className="text-xl lg:text-2xl mt-6 font-light">
-              You can have business tools built,
-              <br className="hidden sm:block" /> the way you want them.
-            </p>
-            <p className="mt-8 md:mt-12">
-              <ButtonLink href="/contact" size="lg">
-                Let's do it
-              </ButtonLink>
-            </p>
-            {/* <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p> */}
+      <Container>
+        <section className="pt-20 md:pt-40">
+          <div className="container mx-auto px-8 lg:flex">
+            <div className="text-center lg:text-left lg:w-1/2">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
+                Building Custom
+                <br /> Business Tools
+              </h1>
+              <p className="text-xl lg:text-2xl mt-6 font-light">
+                You can have business tools built,
+                <br className="hidden sm:block" /> the way you want them.
+              </p>
+              <p className="mt-8 md:mt-12">
+                <ButtonLink href="/products" size="lg">
+                  Let's do it
+                </ButtonLink>
+              </p>
+              {/* <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p> */}
+            </div>
+            <div className="lg:w-1/2 mx-auto flex justify-center mt-4 ">
+              <Link href="/products">
+                <a>
+                  <div
+                    className="hidden md:block relative cursor-pointer mt-6 h-full w-full z-0"
+                    style={{ width: '450px', height: '450px' }}
+                  >
+                    <Image
+                      src="/07.png"
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Absurdist Light Bulb"
+                    />
+                  </div>
+                  <div
+                    className="block md:hidden relative cursor-pointer mt-6 h-full w-full z-0"
+                    style={{ width: '200px', height: '200px' }}
+                  >
+                    <Image
+                      src="/07.png"
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Absurdist Light Bulb"
+                    />
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
-          <div className="lg:w-1/2">
-            <HeroImage />
-          </div>
-        </div>
-      </section>
+        </section>
+      </Container>
+
       {/* Features */}
-      <section id="features" className="py-20 lg:pb-40 lg:pt-48">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-semibold">Why custom tooling matters.</h2>
-          <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
-            <div className="flex-1 px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Trust.</p>
-                <p className="mt-4">
-                  When it's built to your specification, it does exactly what you want and you
-                  control your data.
-                </p>
-              </Card>
-            </div>
-            <div className="flex-1 px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Ease.</p>
-                <p className="mt-4">
-                  Your business processes can be frictionless. That saves your time for working in
-                  your business instead of on your business.
-                </p>
-              </Card>
-            </div>
-            <div className="flex-1 px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Tailored.</p>
-                <p className="mt-4">
-                  You've built a company that has unique needs. A one size fits all tool doesn't
-                  really fit all.
-                </p>
-              </Card>
+      <Container>
+        <section id="features" className="py-20 lg:pb-40 lg:pt-48">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl lg:text-5xl font-semibold">Why custom tooling matters.</h2>
+            <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
+              <div className="flex-1 px-3">
+                <Card className="mb-8">
+                  <p className="font-semibold text-xl">Trust.</p>
+                  <p className="mt-4">
+                    When it's built to your specification, it does exactly what you want and you
+                    control your data.
+                  </p>
+                </Card>
+              </div>
+              <div className="flex-1 px-3">
+                <Card className="mb-8">
+                  <p className="font-semibold text-xl">Ease.</p>
+                  <p className="mt-4">
+                    Your business processes can be frictionless. That saves your time for working in
+                    your business instead of on your business.
+                  </p>
+                </Card>
+              </div>
+              <div className="flex-1 px-3">
+                <Card className="mb-8">
+                  <p className="font-semibold text-xl">Tailored.</p>
+                  <p className="mt-4">
+                    You've built a company that has unique needs. A one size fits all tool doesn't
+                    really fit all.
+                  </p>
+                </Card>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Container>
+
       {/* Features Depth */}
       <SplitSection
         id="services"

@@ -1,12 +1,11 @@
-import Header from './header'
+import Header from './newHeader'
 import Footer from './footer'
 
 function Layout(props) {
   return (
-    <div className="flex flex-col min-h-screen max-w-screen">
+    <div className="flex flex-col min-h-screen max-w-screen w-screen">
       <Header />
-      <main className="text-gray-900 flex-1">{props.children}</main>
-      <Footer />
+      <main>{props.children}</main>
     </div>
   )
 }
