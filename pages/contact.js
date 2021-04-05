@@ -7,7 +7,7 @@ function ContactPage() {
   return (
     <Layout>
       <NextSeo title="Let's work together | CAE Web" description="Let's work together." />
-      <div className="">
+      <div className="mt-12">
         <ContactForm />
       </div>
     </Layout>

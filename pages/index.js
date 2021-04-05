@@ -38,24 +38,20 @@ function IndexPage() {
             <div className="lg:w-1/2 mx-auto flex justify-center mt-4 ">
               <Link href="/products">
                 <a>
-                  <div
-                    className="hidden md:block relative cursor-pointer mt-6 h-full w-full z-0"
-                    style={{ width: '450px', height: '450px' }}
-                  >
+                  <div className="hidden md:block relative cursor-pointer mt-6 h-full w-full z-0">
                     <Image
                       src="/07.png"
-                      layout="fill"
                       objectFit="cover"
                       alt="Absurdist Light Bulb"
+                      width="450px"
+                      height="450px"
                     />
                   </div>
-                  <div
-                    className="block md:hidden relative cursor-pointer mt-6 h-full w-full z-0"
-                    style={{ width: '200px', height: '200px' }}
-                  >
+                  <div className="block md:hidden relative cursor-pointer mt-6 h-full w-full z-0">
                     <Image
                       src="/07.png"
-                      layout="fill"
+                      width="200px"
+                      height="200px"
                       objectFit="cover"
                       alt="Absurdist Light Bulb"
                     />

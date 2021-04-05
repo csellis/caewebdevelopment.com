@@ -35,8 +35,8 @@ function Products() {
         description="3-2-1 Launch: Build your next project quickly to get feedback for your business."
       />
 
-      <div className="relative bg-white">
-        <div className="bg-gray-50">
+      <div className="relative bg-white mt-16">
+        <div className="bg-warm-gray-50">
           {/* <!-- Header section --> */}
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div className="text-center">
