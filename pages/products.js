@@ -1,11 +1,5 @@
 import Layout from '../components/layout'
-import ButtonLink from '../components/ButtonLink'
-import Card from '../components/Card'
-import SplitSection from '../components/SplitSection'
 
-import HeroImage from '../svg/HeroImage'
-import SvgCharts from '../svg/SvgCharts'
-import Build from '../svg/Build'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
@@ -279,7 +273,7 @@ function Products() {
                 We've worked with the world's most innovative companies
               </h2>
               <div className="mt-8 flow-root lg:mt-0 self-center">
-                <div className="-mt-4 -ml-8 lg:-ml-4 grid grid-cols-3 gap-6">
+                <div className=" mx-4 lg:-ml-4 grid grid-cols-3 gap-6">
                   <img className="max-h-12" src="/PayPal.png" alt="PayPal" />
                   <img className="max-h-12" src="/Greycroft.png" alt="Greycroft" />
                   <img className="max-h-12" src="/CBCTech.png" alt="CBC Technical" />

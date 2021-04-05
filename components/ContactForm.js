@@ -63,7 +63,7 @@ export default function ContactForm() {
               <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
             </svg>
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div className="relative bg-white shadow-xl">
               <h2 id="contactHeading" className="sr-only">
                 Contact us
@@ -99,7 +99,7 @@ export default function ContactForm() {
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop stopColor="#fff"></stop>
-                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                          <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
                         </linearGradient>
                       </defs>
                     </svg>
@@ -132,7 +132,7 @@ export default function ContactForm() {
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop stopColor="#fff"></stop>
-                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                          <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
                         </linearGradient>
                       </defs>
                     </svg>
@@ -165,14 +165,14 @@ export default function ContactForm() {
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop stopColor="#fff"></stop>
-                          <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                          <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
                         </linearGradient>
                       </defs>
                     </svg>
                   </div>
                   <div
-                    className="relative absolute top-0 right-0 mt-6"
-                    style={{ width: '500px', height: '500px' }}
+                    className="relative absolute top-0 right-0 mt-6 w-80 h-80 sm:w-96 sm:h-96 mx-auto"
+                    // style={{ width: '500px', height: '500px' }}
                   >
                     <Image
                       src="/absurd_light.png"
@@ -189,7 +189,7 @@ export default function ContactForm() {
                   <InlineWidget
                     url="https://calendly.com/cs-ellis/15-min-discovery-call"
                     styles={{
-                      height: '850px',
+                      height: '900px',
                     }}
                   />
                 </div>

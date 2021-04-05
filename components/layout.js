@@ -1,4 +1,4 @@
-import Header from './newHeader'
+import Header from './header'
 import Footer from './footer'
 
 function Layout(props) {
