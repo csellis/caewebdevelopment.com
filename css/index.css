@@ -20,4 +20,15 @@
   select {
     @apply form-input border-gray-300 block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5;
   }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .filter-blur {
+    --tw-bg-opacity: 0.9;
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  }
 }

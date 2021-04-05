@@ -44,12 +44,12 @@ function Products() {
                 3-2-1 Launch
               </h1>
               <p className="mt-6 text-3xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                Your idea, implemented in 3 days.
+                Implementing your idea in 3 days.
                 <br /> No joke.
               </p>
               <p className="max-w-xl mx-auto mt-5 text-xl text-gray-500">
-                Aimed at clients who want a well-built, 1.0 version of their website in a brief
-                amount of time.
+                For clients that want a well-built, 1.0 version of their website in a brief amount
+                of time.
               </p>
             </div>
           </div>

@@ -33,8 +33,8 @@ function Header() {
   const [mobileOpen, setmobileOpen] = useState(false)
 
   return (
-    <header className="bg-white z-50 fixed top-0 left-0 right-0 bottom-auto">
-      <div className="relative bg-white ">
+    <header className="z-50 fixed top-0 left-0 right-0 bottom-auto filter-blur">
+      <div className="relative">
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
